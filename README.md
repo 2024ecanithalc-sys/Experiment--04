@@ -36,6 +36,14 @@ A typical MOS differential amplifier consists of:
 
 ---
 
+### Circuit Diagram ;
+
+<img width="1286" height="789" alt="Screenshot 2026-03-27 221339" src="https://github.com/user-attachments/assets/68431ff2-937c-4713-8887-75c014d53da2" />
+
+
+
+
+
 ### Design Considerations
 
 - **Low Voltage Operation:** With ±0.9 V supply, transistors must operate efficiently in limited headroom.
@@ -55,6 +63,70 @@ A typical MOS differential amplifier consists of:
 - MOS Threshold Voltage, Vtp = -0.7 V  
 
 ---
+v_{a} = - a * q P <= 2m*omega V DD * 0.5 =0.9 gamma s Vin CMOV, V DCM =0 V V_{T} =0.36.N rho=(V 00 -V xz ) Iss = 9 - (0.9) * I rc <=8mw ( - 8x*J_{35} <= 9mW J_{5} = 1.11mA I D1 =I 0.2 = J 11 Delta in0.56 mOA J 4 = 3200*10^ -3 -= 1.11 * 1a ^ - 3 * 4 1*8 V_{f} = - 0.7V
+
+Vout Vop-Jo Ro = 0 = 0.9 - JoRo
+
+J_{D}*R_{D} = 0.9 R_{D} = 0.9 = 66363 * 10 ^ 3 * 55 * 10 ^ - 3 = 16.36 * 0.3 * 0.52 \approx  1636Omega V inc*mu = 0v G V onl =V on2 =oV V_{L} = - 0.7V v OS =V G -V S =0+0.7=0.7v V D =V OL5 - V_{T} = 0.7 - 0.36 = 0.39V V DS =V D -V S =0-(-0.7V)=0.7V
+
+v DS >V 0V Rightarrow0.7*0.39V v_{1} = 0v v_{5} = - 0.7V V_{D} = 0V , v ONS =0.7v.v PS =0.7v
+
+width -
+
+J D = 1 2 ln( 6pi * u/L (V OS -v T )^ 2 = (396 * 10 ^ - 102)/0.266 = 1.4 * 0.81 * 10 ^ - 9 * 10 ^ 4 0.266 =14.87*10^ -6 = 14 * 88.19m w= 9I 0 L mu_{h}*C_{0}*x * (V, v) ^ 2 = (2 * 0.456 * 10 ^ - 3 * 360 * 10 ^ - 9)/(2.306 * 1n ^ - 4 * (0.34) * 2) 8.306 * 10 ^ - 4 * (0.34) ^ 2
+
+ICMR
+
+V G, S >= V t V OS =8V JCM -V S , v fCM * mu ^ 0 =v CS +v T Vs -0.70, W = 0.36V U ICMmio = - 0.7 + 0.36 = - 0.34V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Step 1: Total Current Calculation
 
