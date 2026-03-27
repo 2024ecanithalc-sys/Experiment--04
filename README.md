@@ -62,23 +62,138 @@ A typical MOS differential amplifier consists of:
 - VoCM = 0 V  
 - MOS Threshold Voltage, Vtp = -0.7 V  
 
+
+
+## Differential Amplifier Calculation
+
+### Given:
+- \( V_{DD} = 0.9\,V \)
+- \( V_{SS} = -0.9\,V \)
+- Power \( P \le 2\,mW \)
+- \( V_T = 0.36\,V \)
+- \( V_{in,CM} = 0\,V \), \( V_{out,CM} = 0\,V \)
+
 ---
-v_{a} = - a * q P <= 2m*omega V DD * 0.5 =0.9 gamma s Vin CMOV, V DCM =0 V V_{T} =0.36.N rho=(V 00 -V xz ) Iss = 9 - (0.9) * I rc <=8mw ( - 8x*J_{35} <= 9mW J_{5} = 1.11mA I D1 =I 0.2 = J 11 Delta in0.56 mOA J 4 = 3200*10^ -3 -= 1.11 * 1a ^ - 3 * 4 1*8 V_{f} = - 0.7V
 
-Vout Vop-Jo Ro = 0 = 0.9 - JoRo
+### 1. Tail Current \( I_{SS} \)
 
-J_{D}*R_{D} = 0.9 R_{D} = 0.9 = 66363 * 10 ^ 3 * 55 * 10 ^ - 3 = 16.36 * 0.3 * 0.52 \approx  1636Omega V inc*mu = 0v G V onl =V on2 =oV V_{L} = - 0.7V v OS =V G -V S =0+0.7=0.7v V D =V OL5 - V_{T} = 0.7 - 0.36 = 0.39V V DS =V D -V S =0-(-0.7V)=0.7V
+\[
+P = (V_{DD} - V_{SS}) \cdot I_{SS}
+\]
 
-v DS >V 0V Rightarrow0.7*0.39V v_{1} = 0v v_{5} = - 0.7V V_{D} = 0V , v ONS =0.7v.v PS =0.7v
+\[
+2\,mW = (0.9 - (-0.9)) \cdot I_{SS}
+\]
 
-width -
+\[
+2 \times 10^{-3} = 1.8 \cdot I_{SS}
+\]
 
-J D = 1 2 ln( 6pi * u/L (V OS -v T )^ 2 = (396 * 10 ^ - 102)/0.266 = 1.4 * 0.81 * 10 ^ - 9 * 10 ^ 4 0.266 =14.87*10^ -6 = 14 * 88.19m w= 9I 0 L mu_{h}*C_{0}*x * (V, v) ^ 2 = (2 * 0.456 * 10 ^ - 3 * 360 * 10 ^ - 9)/(2.306 * 1n ^ - 4 * (0.34) * 2) 8.306 * 10 ^ - 4 * (0.34) ^ 2
+\[
+I_{SS} = \frac{2 \times 10^{-3}}{1.8} = 1.11 \times 10^{-3} A = 1.11\,mA
+\]
 
-ICMR
+---
 
-V G, S >= V t V OS =8V JCM -V S , v fCM * mu ^ 0 =v CS +v T Vs -0.70, W = 0.36V U ICMmio = - 0.7 + 0.36 = - 0.34V
+### 2. Drain Currents
 
+\[
+I_{D1} = I_{D2} = \frac{I_{SS}}{2} = 0.555\,mA
+\]
+
+---
+
+### 3. Drain Resistance \( R_D \)
+
+\[
+V_{out} = V_{DD} - I_D R_D
+\]
+
+\[
+0 = 0.9 - I_D R_D
+\]
+
+\[
+R_D = \frac{0.9}{0.555 \times 10^{-3}}
+\]
+
+\[
+R_D = 1636\,\Omega \approx 1.636\,k\Omega
+\]
+
+---
+
+### 4. Region of Operation Check
+
+\[
+V_S = -0.7\,V,\quad V_G = 0\,V
+\]
+
+\[
+V_{GS} = V_G - V_S = 0.7\,V
+\]
+
+\[
+V_{OV} = V_{GS} - V_T = 0.34\,V
+\]
+
+\[
+V_{DS} = V_D - V_S = 0.7\,V
+\]
+
+\[
+V_{DS} > V_{OV} \Rightarrow 0.7 > 0.34 \quad \text{(Saturation ✔)}
+\]
+
+---
+
+### 5. Width Calculation \( W \)
+
+\[
+I_D = \frac{1}{2} \mu_n C_{ox} \frac{W}{L} (V_{OV})^2
+\]
+
+\[
+W = \frac{2 I_D L}{\mu_n C_{ox} (V_{OV})^2}
+\]
+
+\[
+W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{2.306 \times 10^{-4} \times (0.34)^2}
+\]
+
+\[
+W \approx 14.88 \times 10^{-6} m = 14.88\,\mu m
+\]
+
+---
+
+### 6. Input Common Mode Range (ICMR)
+
+\[
+V_{GS} \ge V_T
+\]
+
+\[
+V_{GS} = V_{ICM} - V_S
+\]
+
+\[
+V_{ICM(min)} = V_S + V_T
+\]
+
+\[
+V_{ICM(min)} = -0.7 + 0.36 = -0.34\,V
+\]
+
+---
+
+### Final Results
+
+- \( I_{SS} = 1.11\,mA \)
+- \( I_D = 0.555\,mA \)
+- \( R_D \approx 1.636\,k\Omega \)
+- \( W \approx 14.88\,\mu m \)
+- \( V_{ICM(min)} = -0.34\,V \)
 
 ### DC Operating Point : 
 <img width="857" height="611" alt="Screenshot 2026-03-27 221400" src="https://github.com/user-attachments/assets/45ed8340-4faa-4724-8c43-abf694aea1bd" />
