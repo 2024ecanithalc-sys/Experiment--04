@@ -3,6 +3,8 @@ Experiment -04
 
 ## MOS Differential Amplifier Analysis
 
+## 2a (First circuit )
+
 ### Aim
 Design and analyze a MOS differential amplifier for the following specifications:
 - **VDD = 0.9 V**
@@ -372,12 +374,39 @@ V_{oCM} = 0 V \quad (\text{given, satisfied with symmetric design})
 
 The differential amplifier design is **functionally correct**, with experimental results showing **good agreement** with theoretical calculations. Deviations are within acceptable engineering limits and are expected in practical implementations.
 
-### Conclusion
 
 The designed MOS differential amplifier satisfies:
 - Low power constraint (≤ 2 mW)
 - Symmetric operation around 0 V
 - High gain (~500)
 
-Proper transistor sizing and biasing ensure efficient low-voltage operation.
----
+## 2b (Second Circuit )
+
+
+### Circuit :
+
+<img width="1286" height="789" alt="Screenshot 2026-03-27 221339" src="https://github.com/user-attachments/assets/e44a0e86-e1e6-49f9-8663-b21da0f64a0a" />
+
+
+### DC Operating Point :
+
+<img width="857" height="611" alt="Screenshot 2026-03-27 221400" src="https://github.com/user-attachments/assets/d5d24ea5-a68b-4376-9d64-43ebf3b466a3" />
+
+
+### AC Analysis :
+
+### First output waveform :
+
+<img width="1914" height="890" alt="Screenshot 2026-03-27 234701" src="https://github.com/user-attachments/assets/d3446f97-e01c-4609-a90a-02d27f1ab1ee" />
+
+
+### Second  output waveform :
+
+<img width="1919" height="892" alt="Screenshot 2026-03-27 234728" src="https://github.com/user-attachments/assets/6aee9646-ccce-481c-b5e8-19fb9d0c4a45" />
+
+
+### Transient Analysis :
+
+
+<img width="1917" height="917" alt="Screenshot 2026-03-27 234818" src="https://github.com/user-attachments/assets/62c0cd0c-67ec-4348-ae9e-03c3d68ee721" />
+
