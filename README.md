@@ -56,28 +56,19 @@ A typical MOS differential amplifier consists of:
 
 ---
 
-### Step 1: Total Current Calculation
+#### Step 1: Total Current Calculation
 
-\[
-P = (V_{DD} - V_{SS}) \cdot I_{total}
-\]
 
-\[
-2 \times 10^{-3} = (0.9 - (-0.9)) \cdot I_{total}
-\]
+P = (VDD - VSS) \ Itotal
+2 × 10^-3  = (0.9 - (-0.9)) \ Itotal
 
-\[
-2 \times 10^{-3} = 1.8 \cdot I_{total}
-\]
+2 × 10^-3 = 1.8 \ Itotal
 
-\[
-I_{total} = \frac{2 \times 10^{-3}}{1.8} = 1.11 \text{ mA}
-\]
+Itotal = {2 × 10^-3} \ {1.8} = 1.11 mA
 
 So, **tail current**:
-\[
-I_{tail} = 1.11 \text{ mA}
-\]
+I_{tail} = 1.11 mA
+
 
 Each transistor carries:
 \[
