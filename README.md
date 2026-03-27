@@ -1,4 +1,4 @@
-# Experiment--04
+<img width="1919" height="900" alt="Screenshot 2026-03-27 221926" src="https://github.com/user-attachments/assets/64286947-7020-4900-bc70-f33063137f21" /># Experiment--04
 Experiment -04
 
 ## MOS Differential Amplifier Analysis
@@ -80,10 +80,28 @@ ICMR
 V G, S >= V t V OS =8V JCM -V S , v fCM * mu ^ 0 =v CS +v T Vs -0.70, W = 0.36V U ICMmio = - 0.7 + 0.36 = - 0.34V
 
 
+### DC Operating Point : 
+<img width="857" height="611" alt="Screenshot 2026-03-27 221400" src="https://github.com/user-attachments/assets/45ed8340-4faa-4724-8c43-abf694aea1bd" />
 
 
+### Transient Analysis :
+
+<img width="1919" height="875" alt="Screenshot 2026-03-27 221653" src="https://github.com/user-attachments/assets/be8d15b5-cf43-4acc-a09c-3f744f7d791b" />
 
 
+### AC Analysis :
+
+### First output waveform :
+<img width="1919" height="900" alt="Screenshot 2026-03-27 221926" src="https://github.com/user-attachments/assets/49491d38-a494-472a-ba5a-4e9f0a0234f0" />
+
+
+### Second  output waveform :
+
+<img width="1919" height="900" alt="Screenshot 2026-03-27 222038" src="https://github.com/user-attachments/assets/db4d6b5b-b5c7-4f86-84d9-0134d1af2d08" />
+
+### DC Sweep :
+
+<img width="1919" height="907" alt="Screenshot 2026-03-27 222406" src="https://github.com/user-attachments/assets/5d1ac482-afe4-4e38-92df-26c1343bfc47" />
 
 
 
