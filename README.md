@@ -1,4 +1,4 @@
-<img width="1919" height="900" alt="Screenshot 2026-03-27 221926" src="https://github.com/user-attachments/assets/64286947-7020-4900-bc70-f33063137f21" /># Experiment--04
+# Experiment--04
 Experiment -04
 
 ## MOS Differential Amplifier Analysis
