@@ -385,7 +385,7 @@ The designed MOS differential amplifier satisfies:
 
 ### Circuit :
 
-<img width="1286" height="789" alt="Screenshot 2026-03-27 221339" src="https://github.com/user-attachments/assets/e44a0e86-e1e6-49f9-8663-b21da0f64a0a" />
+<img width="1920" height="1080" alt="Screenshot 2026-03-27 234023" src="https://github.com/user-attachments/assets/21ff2f34-efad-4cb4-8804-1496a3c6b66d" />
 
 
 
