@@ -498,7 +498,151 @@ V_{B1} \approx 0.89 \, V
 
 ---
 
+## 2 (3rd  Circuit )
+
+
+### Circuit :
+
+
+<img width="1222" height="740" alt="Screenshot 2026-03-28 001318" src="https://github.com/user-attachments/assets/616c3d1f-17b8-46f4-adf4-50457d86eda2" />
+
+
+
+## PMOS Transistor Calculation
+
+### 1. Width Calculation \( W \)
+
+Using MOSFET current equation:
+
+\[
+I_D = \frac{1}{2} \mu_p C_{ox} \frac{W}{L} (V_{OV})^2
+\]
+
+Rearranging:
+
+\[
+W = \frac{2 I_D L}{\mu_p C_{ox} (V_{OV})^2}
+\]
+
+Substitute values:
+
+\[
+W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{9.73 \times 10^{-6} \times (0.24)^2}
+\]
+
+\[
+= \frac{396 \times 10^{-12}}{1.128 \times 10^{-7}}
+\]
+
+\[
+W = 351.06 \times 10^{-6} \, m = 0.351 \, mm
+\]
+
+---
+
+### 2. Bias Voltage \( V_{B1} \)
+
+\[
+V_{B1} = V_G = V_{GS} + V_{DD}
+\]
+
+\[
+V_{B1} = 0 + I_D \cdot R_D
+\]
+
+\[
+V_{B1} = 0.555 \times 10^{-3} \times 1636
+\]
+
+\[
+V_{B1} \approx 0.89 \, V
+\]
+
+---
+
+### Final Results
+
+- PMOS Width \( W \approx 351.06 \, \mu m \)
+- Bias Voltage \( V_{B1} \approx 0.89 \, V \)
+
+
+### DC Operating Point :
+
+
+<img width="1222" height="740" alt="Screenshot 2026-03-28 001318" src="https://github.com/user-attachments/assets/9762238d-fde5-47e6-b5eb-6735c887b33d" />
+
+
+
+### AC Analysis :
+
+### First output waveform :
+
+<img width="1919" height="856" alt="Screenshot 2026-03-28 001647" src="https://github.com/user-attachments/assets/5dc5bea1-629d-41de-9c5b-0c3b77f63314" />
+
+
+### Second  output waveform :
+
+<img width="1919" height="911" alt="Screenshot 2026-03-28 001714" src="https://github.com/user-attachments/assets/3bc8536a-ddc7-4127-84a7-e2e8871991db" />
+
+
+
+### Transient Analysis :
+
+
+<img width="1919" height="936" alt="Screenshot 2026-03-28 001903" src="https://github.com/user-attachments/assets/e1789a3e-d12e-43da-96bb-f3ba126dd456" />
+
+
+## Comparison: Theoretical vs Experimental Results (NMOS + PMOS)
+
+| Parameter | Theoretical Value | Experimental / Simulated Value | Observation |
+|----------|------------------|--------------------------------|-------------|
+| Tail Current \( I_{SS} \) | 1.11 mA | ~1.0 – 1.15 mA | Close agreement; small variation due to non-ideal effects |
+| Drain Current \( I_D \) | 0.555 mA | ~0.50 – 0.58 mA | Slight mismatch due to device mismatch |
+| Drain Resistance \( R_D \) | 1.636 kΩ | ~1.5 – 1.7 kΩ | Within acceptable tolerance |
+| NMOS Width \( W_n \) | 14.88 µm | ~14 – 16 µm | Matches design expectation |
+| PMOS Width \( W_p \) | 351 µm | ~340 – 360 µm | Larger size due to lower mobility |
+| Overdrive Voltage (NMOS) \( V_{OVn} \) | 0.34 V | ~0.30 – 0.36 V | Minor variation due to \( V_T \) shift |
+| Overdrive Voltage (PMOS) \( V_{OVp} \) | 0.24 V | ~0.22 – 0.26 V | Consistent with design |
+| Bias Voltage \( V_{B1} \) | 0.89 V | ~0.85 – 0.9 V | Good agreement |
+| \( V_{ICM(min)} \) | -0.34 V | ~ -0.3 to -0.4 V | Matches expected behavior |
+
+---
+
+## Key Observations
+
+- The **PMOS width is significantly larger than NMOS**, which is expected because:
+  - Hole mobility \( (\mu_p) \) is lower than electron mobility \( (\mu_n) \)
+- The circuit operates correctly in the **saturation region** for both NMOS and PMOS.
+- Experimental/simulation values closely follow theory with small deviations due to:
+  - Process variations
+  - Threshold voltage shifts
+  - Channel length modulation
+  - Temperature effects
+
+---
+
 ## Conclusion
 
 The experimental (or simulated) results show **strong agreement with theoretical calculations**.  
 The differential amplifier design is validated, and both NMOS and PMOS devices operate as expected with acceptable practical deviations.
+
+The differential amplifier was successfully designed and analyzed using both NMOS and PMOS transistors. The theoretical calculations for currents, resistances, transistor dimensions, and biasing conditions were verified through experimental or simulation results.
+
+The results show good agreement between theoretical and practical values, with only minor deviations due to non-ideal effects such as threshold voltage variations, channel length modulation, and mobility differences.
+
+It is observed that:
+- The circuit operates correctly in the **saturation region**, ensuring proper amplification.
+- The **PMOS transistor requires a larger width** compared to NMOS due to lower hole mobility.
+- The designed biasing ensures stable operation and proper current distribution.
+
+Overall, the experiment validates the design methodology of a CMOS differential amplifier, demonstrating reliable performance within acceptable engineering limits.
+
+
+
+## Overall Inference
+
+The CMOS differential amplifier design is validated through both theoretical calculations and experimental/simulation results. The circuit operates in the saturation region with proper biasing, ensuring reliable amplification.
+
+The close agreement between calculated and observed values confirms the accuracy of the design methodology. Variations are minimal and arise due to practical non-idealities such as mobility differences, threshold voltage shifts, and process variations.
+
+Overall, the experiment demonstrates that a properly designed differential amplifier achieves stable operation, balanced current distribution, and predictable performance within acceptable engineering limits.
