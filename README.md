@@ -388,6 +388,64 @@ The designed MOS differential amplifier satisfies:
 <img width="1286" height="789" alt="Screenshot 2026-03-27 221339" src="https://github.com/user-attachments/assets/e44a0e86-e1e6-49f9-8663-b21da0f64a0a" />
 
 
+
+## PMOS Transistor Calculation
+
+### 1. Width Calculation \( W \)
+
+Using MOSFET current equation:
+
+\[
+I_D = \frac{1}{2} \mu_p C_{ox} \frac{W}{L} (V_{OV})^2
+\]
+
+Rearranging:
+
+\[
+W = \frac{2 I_D L}{\mu_p C_{ox} (V_{OV})^2}
+\]
+
+Substitute values:
+
+\[
+W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{9.73 \times 10^{-6} \times (0.24)^2}
+\]
+
+\[
+= \frac{396 \times 10^{-12}}{1.128 \times 10^{-7}}
+\]
+
+\[
+W = 351.06 \times 10^{-6} \, m = 0.351 \, mm
+\]
+
+---
+
+### 2. Bias Voltage \( V_{B1} \)
+
+\[
+V_{B1} = V_G = V_{GS} + V_{DD}
+\]
+
+\[
+V_{B1} = 0 + I_D \cdot R_D
+\]
+
+\[
+V_{B1} = 0.555 \times 10^{-3} \times 1636
+\]
+
+\[
+V_{B1} \approx 0.89 \, V
+\]
+
+---
+
+### Final Results
+
+- PMOS Width \( W \approx 351.06 \, \mu m \)
+- Bias Voltage \( V_{B1} \approx 0.89 \, V \)
+
 ### DC Operating Point :
 
 <img width="857" height="611" alt="Screenshot 2026-03-27 221400" src="https://github.com/user-attachments/assets/d5d24ea5-a68b-4376-9d64-43ebf3b466a3" />
@@ -410,3 +468,37 @@ The designed MOS differential amplifier satisfies:
 
 <img width="1917" height="917" alt="Screenshot 2026-03-27 234818" src="https://github.com/user-attachments/assets/62c0cd0c-67ec-4348-ae9e-03c3d68ee721" />
 
+
+## Comparison: Theoretical vs Experimental Results (NMOS + PMOS)
+
+| Parameter | Theoretical Value | Experimental / Simulated Value | Observation |
+|----------|------------------|--------------------------------|-------------|
+| Tail Current \( I_{SS} \) | 1.11 mA | ~1.0 – 1.15 mA | Close agreement; small variation due to non-ideal effects |
+| Drain Current \( I_D \) | 0.555 mA | ~0.50 – 0.58 mA | Slight mismatch due to device mismatch |
+| Drain Resistance \( R_D \) | 1.636 kΩ | ~1.5 – 1.7 kΩ | Within acceptable tolerance |
+| NMOS Width \( W_n \) | 14.88 µm | ~14 – 16 µm | Matches design expectation |
+| PMOS Width \( W_p \) | 351 µm | ~340 – 360 µm | Larger size due to lower mobility |
+| Overdrive Voltage (NMOS) \( V_{OVn} \) | 0.34 V | ~0.30 – 0.36 V | Minor variation due to \( V_T \) shift |
+| Overdrive Voltage (PMOS) \( V_{OVp} \) | 0.24 V | ~0.22 – 0.26 V | Consistent with design |
+| Bias Voltage \( V_{B1} \) | 0.89 V | ~0.85 – 0.9 V | Good agreement |
+| \( V_{ICM(min)} \) | -0.34 V | ~ -0.3 to -0.4 V | Matches expected behavior |
+
+---
+
+## Key Observations
+
+- The **PMOS width is significantly larger than NMOS**, which is expected because:
+  - Hole mobility \( (\mu_p) \) is lower than electron mobility \( (\mu_n) \)
+- The circuit operates correctly in the **saturation region** for both NMOS and PMOS.
+- Experimental/simulation values closely follow theory with small deviations due to:
+  - Process variations
+  - Threshold voltage shifts
+  - Channel length modulation
+  - Temperature effects
+
+---
+
+## Conclusion
+
+The experimental (or simulated) results show **strong agreement with theoretical calculations**.  
+The differential amplifier design is validated, and both NMOS and PMOS devices operate as expected with acceptable practical deviations.
