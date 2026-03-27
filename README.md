@@ -52,7 +52,7 @@ A typical MOS differential amplifier consists of:
 - Maximum Power, P ≤ 2 mW  
 - VinCM = 0 V  
 - VoCM = 0 V  
-- PMOS Threshold Voltage, Vtp = -0.7 V  
+- MOS Threshold Voltage, Vtp = -0.7 V  
 
 ---
 
@@ -60,31 +60,37 @@ A typical MOS differential amplifier consists of:
 
 
 P = (VDD - VSS) \ Itotal
-2 × 10^-3  = (0.9 - (-0.9)) \ Itotal
+2 × 10⁻³  = (0.9 - (-0.9)) \ Itotal
 
-2 × 10^-3 = 1.8 \ Itotal
+2 × 10⁻³ = 1.8 \ Itotal
 
-Itotal = {2 × 10^-3} \ {1.8} = 1.11 mA
+Itotal = {2 × 10⁻³} \ {1.8} = 1.11 mA
 
 So, **tail current**:
 I_{tail} = 1.11 mA
 
 
 Each transistor carries:
-\[
-I_D = \frac{I_{tail}}{2} = 0.555 \text{ mA}
-\]
+
+I_D = {I_{tail}}\{2} = 0.555 { mA}
 
 ---
 
-### Step 2: Overdrive Voltage Selection
+#### Step 2: To  Check M3 is in saturation :
 
-Assume a reasonable overdrive voltage:
-\[
-V_{OV} = V_{GS} - V_T \approx 0.2 \text{ V}
-\]
+VDS3 = Vp -VSS 
+VDS3 = -0.7V + 0.9V = 0.2V
+
+VGS3 -Vth <= 0.2
+VinCM-max = Vp + VGS1
+VGS1 = 0.7V, Vth = 0.7V 
+VinCM-max = 0V
+
+
+
 
 ---
+
 
 ### Step 3: Transconductance (gm)
 
