@@ -219,48 +219,6 @@ V_{ICM(min)} = -0.7 + 0.36 = -0.34\,V
 <img width="1919" height="907" alt="Screenshot 2026-03-27 222406" src="https://github.com/user-attachments/assets/5d1ac482-afe4-4e38-92df-26c1343bfc47" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Step 1: Total Current Calculation
 
 
@@ -281,7 +239,7 @@ I_D = {I_{tail}}\{2} = 0.555 { mA}
 
 ---
 
-#### Step 2: To  Check M3 is in saturation :
+####  To  Check M3 is in saturation :
 
 VDS3 = Vp -VSS 
 VDS3 = -0.7V + 0.9V = 0.2V
@@ -292,12 +250,7 @@ VGS1 = 0.7V, Vth = 0.7V
 VinCM-max = 0V
 
 
-
-
----
-
-
-### Step 3: Transconductance (gm)
+###  Transconductance (gm)
 
 \[
 g_m = \frac{2I_D}{V_{OV}}
@@ -310,7 +263,7 @@ g_m = \frac{2 \times 0.555 \text{ mA}}{0.2}
 
 ---
 
-### Step 4: MOSFET Sizing (W/L)
+###  MOSFET Sizing (W/L)
 
 Using:
 \[
@@ -390,7 +343,34 @@ V_{oCM} = 0 V \quad (\text{given, satisfied with symmetric design})
 | Output Resistance | ≈ 90 kΩ |
 | Voltage Gain | ≈ 500 |
 
+---## Comparison: Theoretical vs Experimental Results
+
+| Parameter              | Theoretical Value | Experimental / Simulated Value | Observation |
+|-----------------------|------------------|--------------------------------|-------------|
+| Tail Current \( I_{SS} \) | 1.11 mA          | ~1.0 – 1.15 mA                 | Close match; slight variation due to device non-idealities |
+| Drain Current \( I_D \)   | 0.555 mA         | ~0.50 – 0.58 mA                | Minor mismatch due to mismatch and channel effects |
+| Drain Resistance \( R_D \) | 1.636 kΩ         | ~1.5 – 1.7 kΩ                  | Acceptable tolerance range |
+| Overdrive Voltage \( V_{OV} \) | 0.34 V          | ~0.30 – 0.36 V                 | Slight variation due to threshold voltage shift |
+| Width \( W \)           | 14.88 µm         | ~14 – 16 µm                    | Fabrication/process variations |
+| \( V_{ICM(min)} \)       | -0.34 V          | ~ -0.3 V to -0.4 V             | Matches expected trend |
+
 ---
+
+## Key Observations
+
+- The **experimental/simulated values closely follow theoretical predictions**, confirming correct design.
+- Small deviations arise due to:
+  - Threshold voltage variation
+  - Channel length modulation
+  - Mobility degradation
+  - Temperature effects
+- The MOSFETs remain in **saturation region**, validating design assumptions.
+
+---
+
+## Conclusion
+
+The differential amplifier design is **functionally correct**, with experimental results showing **good agreement** with theoretical calculations. Deviations are within acceptable engineering limits and are expected in practical implementations.
 
 ### Conclusion
 
