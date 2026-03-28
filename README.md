@@ -69,97 +69,70 @@ A typical MOS differential amplifier consists of:
 ## Differential Amplifier Calculation
 
 ### Given:
-- \( V_{DD} = 0.9\,V \)
-- \( V_{SS} = -0.9\,V \)
-- Power \( P \le 2\,mW \)
-- \( V_T = 0.36\,V \)
-- \( V_{in,CM} = 0\,V \), \( V_{out,CM} = 0\,V \)
+-  VDD = 0.9V 
+-  VSS = -0.9V
+- Power = mW 
+- VT = 0.36V 
+-  Vin,CM = 0V ,  Vout,CM = 0V 
 
 ---
 
-### 1. Tail Current \( I_{SS} \)
+### 1. Tail Current (ISS)
 
-\[
-P = (V_{DD} - V_{SS}) \cdot I_{SS}
-\]
+P = (VDD - VSS) \ ISS
 
-\[
-2\,mW = (0.9 - (-0.9)) \cdot I_{SS}
-\]
+2mW = (0.9 - (-0.9)) \ ISS
 
-\[
-2 \times 10^{-3} = 1.8 \cdot I_{SS}
-\]
+2  × 10^-3 = 1.8 \ ISS
 
-\[
-I_{SS} = \frac{2 \times 10^{-3}}{1.8} = 1.11 \times 10^{-3} A = 1.11\,mA
-\]
+ISS = 2 × 10^{-3}\{1.8} = 1.11  × 10^{- 3} A = 1.11mA
+
 
 ---
 
 ### 2. Drain Currents
 
-\[
-I_{D1} = I_{D2} = \frac{I_{SS}}{2} = 0.555\,mA
-\]
+
+ID1 = ID2 = {ISS}\{2} = 0.555\,mA
 
 ---
 
-### 3. Drain Resistance \( R_D \)
+### 3. Drain Resistance ( RD )
+Vout = VDD - ID ×  RD
 
-\[
-V_{out} = V_{DD} - I_D R_D
-\]
-
-\[
 0 = 0.9 - I_D R_D
-\]
 
-\[
-R_D = \frac{0.9}{0.555 \times 10^{-3}}
-\]
+RD = {0.9}\{0.555 × 10^{-3} }
 
-\[
-R_D = 1636\,\Omega \approx 1.636\,k\Omega
-\]
+
+RD = 1636Omega 
+
 
 ---
 
 ### 4. Region of Operation Check
 
-\[
-V_S = -0.7\,V,\quad V_G = 0\,V
-\]
 
-\[
-V_{GS} = V_G - V_S = 0.7\,V
-\]
+VS = -0.7V, VG = 0V
 
-\[
-V_{OV} = V_{GS} - V_T = 0.34\,V
-\]
+VGS = VG - VS = 0.7V
 
-\[
-V_{DS} = V_D - V_S = 0.7\,V
-\]
+VOV = VGS - VT = 0.34V
 
-\[
-V_{DS} > V_{OV} \Rightarrow 0.7 > 0.34 \quad \text{(Saturation ✔)}
-\]
+VDS = VD - VS = 0.7V
+
+VDS > VOV ,0.7 > 0.34 {(Saturation ✔)}
 
 ---
 
-### 5. Width Calculation \( W \)
+### 5. Width Calculation ( W )
 
-\[
-I_D = \frac{1}{2} \mu_n C_{ox} \frac{W}{L} (V_{OV})^2
-\]
+ID = 1\2( un × Cox × W\L (VOV)^2
 
-\[
 W = \frac{2 I_D L}{\mu_n C_{ox} (V_{OV})^2}
-\]
 
-\[
+
+
 W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{2.306 \times 10^{-4} \times (0.34)^2}
 \]
 
