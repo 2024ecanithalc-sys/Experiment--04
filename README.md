@@ -176,7 +176,18 @@ V_{ICM(min)} = -0.7 + 0.36 = -0.34\,V
 
 ### Transient Analysis :
 
-<img width="1919" height="875" alt="Screenshot 2026-03-27 221653" src="https://github.com/user-attachments/assets/be8d15b5-cf43-4acc-a09c-3f744f7d791b" />
+
+### First output waveform :
+
+
+<img width="1917" height="892" alt="Screenshot 2026-03-28 233954" src="https://github.com/user-attachments/assets/840a26f8-54ec-4202-a3df-f0367a9cc434" />
+
+
+
+### Second  output waveform :
+
+<img width="1917" height="889" alt="Screenshot 2026-03-28 234030" src="https://github.com/user-attachments/assets/379c87a6-b8fc-47d1-9b26-31b7216af75d" />
+
 
 
 ### AC Analysis :
@@ -227,14 +238,9 @@ VinCM-max = 0V
 
 ###  Transconductance (gm)
 
-\[
-g_m = \frac{2I_D}{V_{OV}}
-\]
-
-\[
-g_m = \frac{2 \times 0.555 \text{ mA}}{0.2}
-= 5.55 \text{ mS}
-\]
+gm = 2ID \ VOV
+gm = 2 × 0.555 × mA \ 0.2
+= 5.55  mS
 
 ---
 
@@ -248,62 +254,50 @@ I_D = \frac{1}{2} k_n \frac{W}{L} V_{OV}^2
 Assume:
 \[
 k_n = 200 \, \mu A/V^2
-\]
 
-\[
-0.555 \text{ mA} = \frac{1}{2} \cdot 200 \times 10^{-6} \cdot \frac{W}{L} \cdot (0.2)^2
-\]
+0.555 mA = {1} \ {2} × 200 × 10^{-6} × {W} \ {L} \(0.2)^2
 
-\[
-0.555 \times 10^{-3} = 100 \times 10^{-6} \cdot \frac{W}{L} \cdot 0.04
-\]
+0.555 × 10^{-3} = 100 × 10^{-6} {W} \ {L} × 0.04
 
-\[
-0.555 \times 10^{-3} = 4 \times 10^{-6} \cdot \frac{W}{L}
-\]
+0.555 × 10^{-3} = 4 × 10^{-6}frac{W} \ {L}
 
-\[
-\frac{W}{L} = \frac{0.555 \times 10^{-3}}{4 \times 10^{-6}} \approx 139
-\]
+{W} \ {L} ={0.555 × 10^{-3}} \ {4 × 10^{-6}} \ 139
+
 
 ---
 
 ### Step 5: Output Resistance
 
-\[
+
 r_o = \frac{1}{\lambda I_D}
 \]
 
 Assume:
 \[
 \lambda = 0.02 \, V^{-1}
-\]
 
-\[
-r_o = \frac{1}{0.02 \times 0.555 \times 10^{-3}} \approx 90 \, k\Omega
-\]
+ro = 1 \ 0.02 × 0.555  ×10^{-3}\  1.636 k\Omega
+
 
 ---
 
 ### Step 6: Voltage Gain
 
 For differential amplifier:
-\[
-A_v = g_m \cdot r_o
-\]
 
-\[
-A_v = 5.55 \times 10^{-3} \cdot 90 \times 10^{3}
-\approx 500
-\]
+Av = gm \ r_o
+
+
+
+Av = 5.55 × 10^{-3} \ 90 × 10^{3}
+
 
 ---
 
 ### Step 7: Output Common Mode Check
 
-\[
-V_{oCM} = 0 V \quad (\text{given, satisfied with symmetric design})
-\]
+
+VoCM= 0 V ( satisfied with symmetric design})
 
 ---
 
@@ -322,12 +316,12 @@ V_{oCM} = 0 V \quad (\text{given, satisfied with symmetric design})
 
 | Parameter              | Theoretical Value | Experimental / Simulated Value | Observation |
 |-----------------------|------------------|--------------------------------|-------------|
-| Tail Current \( I_{SS} \) | 1.11 mA          | ~1.0 – 1.15 mA                 | Close match; slight variation due to device non-idealities |
-| Drain Current \( I_D \)   | 0.555 mA         | ~0.50 – 0.58 mA                | Minor mismatch due to mismatch and channel effects |
-| Drain Resistance \( R_D \) | 1.636 kΩ         | ~1.5 – 1.7 kΩ                  | Acceptable tolerance range |
-| Overdrive Voltage \( V_{OV} \) | 0.34 V          | ~0.30 – 0.36 V                 | Slight variation due to threshold voltage shift |
-| Width \( W \)           | 14.88 µm         | ~14 – 16 µm                    | Fabrication/process variations |
-| \( V_{ICM(min)} \)       | -0.34 V          | ~ -0.3 V to -0.4 V             | Matches expected trend |
+| Tail Current ( ISS) | 1.11 mA          |  1.1108 mA                 | Close match; slight variation due to device non-idealities |
+| Drain Current ( ID)   | 0.555 mA         | 0.558 mA                | Minor mismatch due to mismatch and channel effects |
+| Drain Resistance ( RD) | 1.636 kΩ         |  1.636 kΩ                  | Acceptable tolerance range |
+| Overdrive Voltage ( VOV) | 0.34 V          | 0.359 V                 | Slight variation due to threshold voltage shift |
+| Width ( W )           | 14.88 µm         | ~14.98 µm                    | Fabrication/process variations |
+| ( VICM(min))       | -0.34 V          |  -0.4 V             | Matches expected trend |
 
 ---
 
@@ -368,49 +362,34 @@ The designed MOS differential amplifier satisfies:
 
 Using MOSFET current equation:
 
-\[
 I_D = \frac{1}{2} \mu_p C_{ox} \frac{W}{L} (V_{OV})^2
-\]
 
 Rearranging:
 
-\[
 W = \frac{2 I_D L}{\mu_p C_{ox} (V_{OV})^2}
-\]
 
 Substitute values:
 
-\[
-W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{9.73 \times 10^{-6} \times (0.24)^2}
-\]
+W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{9.73 \times 10^{-6} \times (0.24)^2
 
-\[
 = \frac{396 \times 10^{-12}}{1.128 \times 10^{-7}}
-\]
 
-\[
 W = 351.06 \times 10^{-6} \, m = 0.351 \, mm
-\]
+
 
 ---
 
 ### 2. Bias Voltage \( V_{B1} \)
 
-\[
+
 V_{B1} = V_G = V_{GS} + V_{DD}
-\]
 
-\[
 V_{B1} = 0 + I_D \cdot R_D
-\]
 
-\[
 V_{B1} = 0.555 \times 10^{-3} \times 1636
-\]
 
-\[
 V_{B1} \approx 0.89 \, V
-\]
+
 
 ---
 
@@ -457,15 +436,15 @@ V_{B1} \approx 0.89 \, V
 
 | Parameter | Theoretical Value | Experimental / Simulated Value | Observation |
 |----------|------------------|--------------------------------|-------------|
-| Tail Current \( I_{SS} \) | 1.11 mA | ~1.0 – 1.15 mA | Close agreement; small variation due to non-ideal effects |
-| Drain Current \( I_D \) | 0.555 mA | ~0.50 – 0.58 mA | Slight mismatch due to device mismatch |
-| Drain Resistance \( R_D \) | 1.636 kΩ | ~1.5 – 1.7 kΩ | Within acceptable tolerance |
-| NMOS Width \( W_n \) | 14.88 µm | ~14 – 16 µm | Matches design expectation |
-| PMOS Width \( W_p \) | 351 µm | ~340 – 360 µm | Larger size due to lower mobility |
-| Overdrive Voltage (NMOS) \( V_{OVn} \) | 0.34 V | ~0.30 – 0.36 V | Minor variation due to \( V_T \) shift |
-| Overdrive Voltage (PMOS) \( V_{OVp} \) | 0.24 V | ~0.22 – 0.26 V | Consistent with design |
-| Bias Voltage \( V_{B1} \) | 0.89 V | ~0.85 – 0.9 V | Good agreement |
-| \( V_{ICM(min)} \) | -0.34 V | ~ -0.3 to -0.4 V | Matches expected behavior |
+| Tail Current \( I_{SS} \) | 1.11 mA |  1.1108 mA | Close agreement; small variation due to non-ideal effects |
+| Drain Current \( I_D \) | 0.555 mA |  0.5508 mA | Slight mismatch due to device mismatch |
+| Drain Resistance \( R_D \) | 1.636 kΩ |  1.7636 kΩ | Within acceptable tolerance |
+| NMOS Width \( W_n \) | 14.88 µm | ~14.94 µm | Matches design expectation |
+| PMOS Width \( W_p \) | 351 µm | 350 µm | Larger size due to lower mobility |
+| Overdrive Voltage (NMOS) \( V_{OVn} \) | 0.34 V |  0.36 V | Minor variation due to \( V_T \) shift |
+| Overdrive Voltage (PMOS) \( V_{OVp} \) | 0.24 V |  0.26 V | Consistent with design |
+| Bias Voltage \( V_{B1} \) | 0.89 V | ~0.89 V | Good agreement |
+| \( V_{ICM(min)} \) | -0.34 V | -0.4 V | Matches expected behavior |
 
 ---
 
@@ -498,49 +477,33 @@ V_{B1} \approx 0.89 \, V
 
 Using MOSFET current equation:
 
-\[
 I_D = \frac{1}{2} \mu_p C_{ox} \frac{W}{L} (V_{OV})^2
-\]
 
 Rearranging:
 
-\[
 W = \frac{2 I_D L}{\mu_p C_{ox} (V_{OV})^2}
-\]
 
 Substitute values:
 
-\[
 W = \frac{2 \times 0.555 \times 10^{-3} \times 360 \times 10^{-9}}{9.73 \times 10^{-6} \times (0.24)^2}
-\]
 
-\[
 = \frac{396 \times 10^{-12}}{1.128 \times 10^{-7}}
-\]
 
-\[
 W = 351.06 \times 10^{-6} \, m = 0.351 \, mm
-\]
+
 
 ---
 
 ### 2. Bias Voltage \( V_{B1} \)
 
-\[
+
 V_{B1} = V_G = V_{GS} + V_{DD}
-\]
 
-\[
 V_{B1} = 0 + I_D \cdot R_D
-\]
 
-\[
 V_{B1} = 0.555 \times 10^{-3} \times 1636
-\]
 
-\[
 V_{B1} \approx 0.89 \, V
-\]
 
 ---
 
@@ -588,15 +551,15 @@ V_{B1} \approx 0.89 \, V
 
 | Parameter | Theoretical Value | Experimental / Simulated Value | Observation |
 |----------|------------------|--------------------------------|-------------|
-| Tail Current \( I_{SS} \) | 1.11 mA | ~1.0 – 1.15 mA | Close agreement; small variation due to non-ideal effects |
-| Drain Current \( I_D \) | 0.555 mA | ~0.50 – 0.58 mA | Slight mismatch due to device mismatch |
-| Drain Resistance \( R_D \) | 1.636 kΩ | ~1.5 – 1.7 kΩ | Within acceptable tolerance |
-| NMOS Width \( W_n \) | 14.88 µm | ~14 – 16 µm | Matches design expectation |
-| PMOS Width \( W_p \) | 351 µm | ~340 – 360 µm | Larger size due to lower mobility |
-| Overdrive Voltage (NMOS) \( V_{OVn} \) | 0.34 V | ~0.30 – 0.36 V | Minor variation due to \( V_T \) shift |
-| Overdrive Voltage (PMOS) \( V_{OVp} \) | 0.24 V | ~0.22 – 0.26 V | Consistent with design |
-| Bias Voltage \( V_{B1} \) | 0.89 V | ~0.85 – 0.9 V | Good agreement |
-| \( V_{ICM(min)} \) | -0.34 V | ~ -0.3 to -0.4 V | Matches expected behavior |
+| Tail Current \( I_{SS} \) | 1.11 mA | 1.1108 mA | Close agreement; small variation due to non-ideal effects |
+| Drain Current \( I_D \) | 0.555 mA | 0.558 mA | Slight mismatch due to device mismatch |
+| Drain Resistance \( R_D \) | 1.636 kΩ | 1.636 kΩ | Within acceptable tolerance |
+| NMOS Width \( W_n \) | 14.88 µm | 14.97µm | Matches design expectation |
+| PMOS Width \( W_p \) | 351 µm | 360 µm | Larger size due to lower mobility |
+| Overdrive Voltage (NMOS) \( V_{OVn} \) | 0.34 V |  0.36 V | Minor variation due to \( V_T \) shift |
+| Overdrive Voltage (PMOS) \( V_{OVp} \) | 0.24 V |  0.26 V | Consistent with design |
+| Bias Voltage \( V_{B1} \) | 0.89 V | 0.89  V | Good agreement |
+| \( V_{ICM(min)} \) | -0.34 V |  -0.4 V | Matches expected behavior |
 
 ---
 
