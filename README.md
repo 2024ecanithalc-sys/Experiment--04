@@ -465,8 +465,19 @@ V_{B1} \approx 0.89 \, V
 
 ### Transient Analysis :
 
+### First output waveform :
 
-<img width="1917" height="917" alt="Screenshot 2026-03-27 234818" src="https://github.com/user-attachments/assets/62c0cd0c-67ec-4348-ae9e-03c3d68ee721" />
+
+<img width="1902" height="912" alt="Screenshot 2026-03-28 231948" src="https://github.com/user-attachments/assets/c35c18f8-ae0d-4db5-8878-b936422747ce" />
+
+
+
+### Second  output waveform :
+
+
+<img width="1919" height="894" alt="Screenshot 2026-03-28 232019" src="https://github.com/user-attachments/assets/357ec4bf-2d2c-4df0-8266-9dd5b45cfe16" />
+
+
 
 
 ## Comparison: Theoretical vs Experimental Results (NMOS + PMOS)
@@ -569,7 +580,7 @@ V_{B1} \approx 0.89 \, V
 ### DC Operating Point :
 
 
-<img width="1222" height="740" alt="Screenshot 2026-03-28 001318" src="https://github.com/user-attachments/assets/9762238d-fde5-47e6-b5eb-6735c887b33d" />
+<img width="871" height="720" alt="Screenshot 2026-03-28 001300" src="https://github.com/user-attachments/assets/85eff55f-6374-4ea6-b487-695536a2243c" />
 
 
 
@@ -588,8 +599,16 @@ V_{B1} \approx 0.89 \, V
 
 ### Transient Analysis :
 
+### First output waveform :
 
-<img width="1919" height="936" alt="Screenshot 2026-03-28 001903" src="https://github.com/user-attachments/assets/e1789a3e-d12e-43da-96bb-f3ba126dd456" />
+<img width="1819" height="897" alt="Screenshot 2026-03-28 224608" src="https://github.com/user-attachments/assets/092657af-10b8-418e-bc03-93b65f72f1e9" />
+
+
+
+### Second  output waveform :
+
+
+<img width="1901" height="923" alt="Screenshot 2026-03-28 224654" src="https://github.com/user-attachments/assets/5b48a6f0-f66e-4db8-a485-530160083aab" />
 
 
 ## Comparison: Theoretical vs Experimental Results (NMOS + PMOS)
